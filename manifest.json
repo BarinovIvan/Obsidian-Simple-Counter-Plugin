@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "simple-counter",
+	"name": "Simple Counter",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Use to increment 'visited' YAML FrontMatter property on page visit",
+	"author": "BarinovIvan",
+	"authorUrl": "https://github.com/BarinovIvan",
 	"isDesktopOnly": false
 }
