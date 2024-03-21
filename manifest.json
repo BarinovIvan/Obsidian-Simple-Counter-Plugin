@@ -1,7 +1,7 @@
 {
 	"id": "simple-counter",
 	"name": "Simple Counter",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Use to increment 'visited' YAML FrontMatter property on page visit",
 	"author": "BarinovIvan",
