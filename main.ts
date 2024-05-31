@@ -23,19 +23,25 @@ export default class ObsidianCounter extends Plugin {
 				const view = leaf?.view;
 				// if we are on the note tab
 				if (view && view instanceof MarkdownView) {
-					// @ts-ignore
-					const isDirectoryIgnored = !this.settings.folders.includes(view.file.parent.path)
+					// read file and content
+					const file: any = view.file;
+					const content = await readFile(file);
+
+					const isDirectoryIgnored = !this.settings.folders.includes(file.parent.path)
 					if (!this.settings.allFolders && isDirectoryIgnored) {
 						return
 					}
+
+					if (!this.settings.autoCreate && content.length === 0) {
+						return
+					}
+
 					// get yaml frontmatter
-					const file: any = view.file;
-					const content = await readFile(file);
 					let lines = getYamlFrontMatter(content)
 					let visitedProperty;
 					if (lines) {
 						visitedProperty = getVisitedProperty(lines)
-					} 
+					}
 					// create property if set to autocreate
 					if (!visitedProperty && this.settings.autoCreate) {
 						if (!lines) {
